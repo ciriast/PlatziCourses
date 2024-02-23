@@ -25,7 +25,7 @@ class MyArray{
 
     delete(index) {
         const item = this.data[index];
-        delete this.data[index];
+        this.shiftIndex[index];
 
         return item;
     }
