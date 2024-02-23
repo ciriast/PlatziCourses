@@ -25,16 +25,19 @@ class MyArray{
 
     delete(index) {
         const item = this.data[index];
-        this.shiftIndex[index];
+        this.shiftIndex(index);
 
         return item;
     }
 
     shiftIndex(index) {
         for(let i = index; i < this.length - 1; i++) {
+            console.log(i);
+            console.log(this.data[i]);
             this.data[i] = this.data[i + 1];
+            console.log(this.data[i]);
         }
-
+        console.log(this.data);
         delete this.data[this.length - 1];
         this.length--;
     }
