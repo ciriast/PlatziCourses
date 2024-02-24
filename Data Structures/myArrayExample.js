@@ -40,6 +40,10 @@ class MyArray{
     }
 
     insertAtBegining(item) {
+        if (!item) {
+            return this.data;
+        }
+
         this.modifyIndexes();
         this.data[0] = item;
 
@@ -62,6 +66,10 @@ class MyArray{
     }
 
     deleteFirstElement() {
+        if (this.length > 0) {
+            return "";
+        }
+        
         const valueToRemove = this.data[0]
         let valueToInsert = this.data[this.length - 1];
 
