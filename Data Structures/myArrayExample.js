@@ -60,6 +60,25 @@ class MyArray{
 
         this.length++;
     }
+
+    deleteFirstElement() {
+        const valueToRemove = this.data[0]
+        let valueToInsert = this.data[this.length - 1];
+
+        for (let i = this.length; i > 0; i--) {
+            const originalValue = this.data[i - 1];
+            this.data[i - 1] = valueToInsert
+
+            if(originalValue) {
+                valueToInsert = originalValue;
+            }
+        }
+        
+        delete this.data[this.length - 1];
+        this.length--;
+
+        return valueToRemove;
+    }
 }
 
 const myArray = new MyArray();
