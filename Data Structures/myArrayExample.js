@@ -66,10 +66,10 @@ class MyArray{
     }
 
     deleteFirstElement() {
-        if (this.length > 0) {
-            return "";
+        if (this.length <= 0) {
+            return undefined;
         }
-        
+
         const valueToRemove = this.data[0]
         let valueToInsert = this.data[this.length - 1];
 
