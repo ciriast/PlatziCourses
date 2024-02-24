@@ -32,14 +32,33 @@ class MyArray{
 
     shiftIndex(index) {
         for(let i = index; i < this.length - 1; i++) {
-            console.log(i);
-            console.log(this.data[i]);
             this.data[i] = this.data[i + 1];
-            console.log(this.data[i]);
         }
-        console.log(this.data);
+
         delete this.data[this.length - 1];
         this.length--;
+    }
+
+    insertAtBegining(item) {
+        this.modifyIndexes();
+        this.data[0] = item;
+
+        return this.data;
+    }
+
+    modifyIndexes() {
+        let valueToInsert = this.data[0];
+
+        for(let i = 0; i < this.length; i++) {
+            const originalValue = this.data[i + 1];
+            this.data[i + 1] = valueToInsert;
+
+            if(originalValue) {
+                valueToInsert = originalValue;
+            }
+        }
+
+        this.length++;
     }
 }
 
