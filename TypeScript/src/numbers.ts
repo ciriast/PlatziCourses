@@ -1,0 +1,4 @@
+(() => {
+  let productPrice = 100;
+
+})();
