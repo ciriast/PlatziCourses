@@ -1,7 +1,7 @@
 (() => {
-  const login = (data: {email: string, password: string}) => {
+  type loginData = {email: string, password: string}
 
-  }
+  const login = (data: loginData) => data;
 
   const myData = {
     email: "something@hey.com",
