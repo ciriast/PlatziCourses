@@ -1,16 +1,11 @@
 (() => {
-  type Sizes = "S" | "M" | "L" | "XL";
+  const total = (prices: number[]): number => {
+    let sum = 0;
 
-  function createProductToJson(title: string, createAt: Date, stock: number, size: Sizes) {
-    return {
-      title,
-      createAt,
-      stock,
-      size
-    }
+    prices.forEach(element => {
+      sum += element;
+    });
 
-    const product = createProductToJson("PS4", new Date(), 1, "XL");
-
-
+    return sum;
   }
 })();
