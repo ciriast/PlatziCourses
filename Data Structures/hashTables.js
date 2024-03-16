@@ -39,6 +39,23 @@ class HashTable {
 
         return undefined;
     }
+
+    delete(key) {
+        const address = this.hashMethod(key);
+        const currentBucket = this.data[address];
+
+        if (currentBucket) {
+            for (let i = 0; i < currentBucket.length; i++) {
+                if (currentBucket[i][0] === key) {
+                    delete this.data[address][i];
+
+                    return this.data;
+                }
+            }
+        }
+
+        return undefined;
+    }
 }
 
 const myHashTable = new HashTable(50);
