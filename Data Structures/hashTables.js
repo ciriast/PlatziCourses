@@ -47,14 +47,33 @@ class HashTable {
         if (currentBucket) {
             for (let i = 0; i < currentBucket.length; i++) {
                 if (currentBucket[i][0] === key) {
-                    delete this.data[address][i];
-
-                    return this.data;
+                    const currentValue = currentBucket[i];
+                    this.data[address].splice(i, 1);
+        
+                    return currentValue;
                 }
             }
         }
 
         return undefined;
+    }
+
+    getDataByValue(value) {
+        let myArray = [];
+
+        for (let i = 0; i < this.data.length; i++) {
+            const myData = this.data[i];
+            
+            if (myData) {
+                for (let y = 0; y < myData.length; y++) {
+                    if (myData[y][1] === value) {
+                        myArray.push(myData[y]);
+                    }                    
+                }
+            }
+        }
+
+        return myArray;
     }
 }
 
